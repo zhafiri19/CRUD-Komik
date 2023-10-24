@@ -24,7 +24,7 @@ class KomikController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'judul' => 'required|string|max:155',
+            'judul' => 'required|unique:komiks|string|max:155',
             'penulis' => 'required',
             'penerbit' => 'required',
             'content' => 'required'

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2023 at 07:00 PM
+-- Generation Time: Oct 24, 2023 at 04:19 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -66,7 +66,8 @@ INSERT INTO `komiks` (`id`, `judul`, `slug`, `penulis`, `penerbit`, `content`, `
 (7, 'Naruto', 'naruto', 'Masashi Kishimoto', 'Shueisha', 'sebuah serial manga karya Masashi Kishimoto yang diadaptasi menjadi serial anime. Manga Naruto bercerita seputar kehidupan tokoh utamanya, Naruto Uzumaki, seorang ninja yang hiperaktif', '2023-10-23 07:16:53', '2023-10-23 07:16:53'),
 (8, 'Dragon Ball', 'dragon-ball', 'Akira Toriyama', 'Shonen Jump', 'sebuah manga dan anime karya Akira Toriyama dari tahun 1984 sampai 1995. Albumnya terdiri dari 42 buku dan di Indonesia diterbitkan oleh Elex Media Komputindo. Sebelumnya Dragon Ball juga pernah diterbitkan oleh Rajawali Grafiti', '2023-10-23 07:28:26', '2023-10-23 08:29:42'),
 (9, 'Yu-Gi-Oh!', 'yu-gi-oh', 'Kazuki Takahashi', 'Weekly Shonen Jump', 'sebuah manga karya Kazuki Takahashi sejak tahun 1996, yang mengisahkan tentang petualangan seorang anak laki-laki yang jago dalam permainan video', '2023-10-23 08:28:42', '2023-10-23 08:28:42'),
-(10, 'Crayon Sinchan', 'crayon-sinchan', 'Yoshito Usui', 'Futabasha', 'Crayon Shin-chan, adalah serial manga Jepang yang ditulis dan diilustrasikan oleh Yoshito Usui. Crayon Shin-chan muncul pertama kali pada tahun 1990 di majalah mingguan Jepang bernama Weekly Manga Action, yang diterbitkan oleh Futabasha', '2023-10-23 08:31:37', '2023-10-23 08:31:37');
+(10, 'Crayon Sinchan', 'crayon-sinchan', 'Yoshito Usui', 'Futabasha', 'Crayon Shin-chan, adalah serial manga Jepang yang ditulis dan diilustrasikan oleh Yoshito Usui. Crayon Shin-chan muncul pertama kali pada tahun 1990 di majalah mingguan Jepang bernama Weekly Manga Action, yang diterbitkan oleh Futabasha', '2023-10-23 08:31:37', '2023-10-23 08:31:37'),
+(12, 'Samurai X', 'samurai-x', 'Masashi Kishimoto', 'Weekly Shonen Jump', 'sdsdsdscscsc', '2023-10-23 19:19:51', '2023-10-23 19:19:51');
 
 -- --------------------------------------------------------
 
@@ -130,6 +131,7 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -137,6 +139,13 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(4, 'Farhan Zhafiri', 'farhan', 'yo@gmail.com', NULL, '$2y$10$kELlK5G5AIQpiodN20f9luM2ggpKgF8oEZcE8ks0AKiRwoL3MAX2q', NULL, '2023-10-23 17:42:11', '2023-10-23 17:42:11');
 
 --
 -- Indexes for dumped tables
@@ -196,7 +205,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `komiks`
 --
 ALTER TABLE `komiks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -214,7 +223,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
